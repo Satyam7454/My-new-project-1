@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-slate-900 text-gray-200">
+
+<div class="flex items-center justify-center min-h-screen">
+  <div class="bg-gray-900/90 p-8 rounded-lg shadow-md border border-blue-900 w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+    <form>
+
+      <div class="mb-4">
+        <label class="block text-gray-400 text-sm font-medium pl-2">Fullname</label>
+        <input type="text" class="text-[14px] w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg outline-none focus:border-blue-500 text-gray-200" placeholder="Enter Fullname"   required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-400 text-sm font-medium pl-2">Mobile</label>
+        <input type="number" class="text-[14px] w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg outline-none focus:border-blue-500 text-gray-200" placeholder="Enter Mobile" required>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-400 text-sm font-medium pl-2">Email</label>
+        <input type="email" class="text-[14px] w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg outline-none focus:border-blue-500 text-gray-200" placeholder="Example@gmail.com" required>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-400 text-sm font-medium pl-2">Password</label>
+        <div class="relative">
+          <input id="password" type="password" class="text-[14px] w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg outline-none focus:border-blue-500 text-gray-200" placeholder="Enter Password" required>
+          <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm text-gray-400 hover:text-gray-200">Show</button>
+        </div>
+      </div>
+      <button type="submit" class="text-sm font-medium w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Sign Up</button>
+    </form>
+    <div>
+        <p class="text-[14px] text-center mt-4">Already have an account? <a href="#" class="text-[14px] font-medium text-blue-500 hover:underline">Login here</a></p>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const passwordInput = document.getElementById('password');
+  const toggleButton = document.getElementById('togglePassword');
+
+  toggleButton.addEventListener('click', () => {
+    const isPassword = passwordInput.type === 'password';
+    passwordInput.type = isPassword ? 'text' : 'password';
+    toggleButton.textContent = isPassword ? 'Hide' : 'Show';
+  });
+</script>
+
+</body>
+</html>
